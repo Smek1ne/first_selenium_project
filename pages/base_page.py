@@ -7,12 +7,12 @@ class BasePage:
         self.url = url
         self.browser.implicitly_wait(timeout)
 
-    def open(self):
-        self.browser.get(self.url)
-
     def is_element_presented(self, how, what):
         try:
             self.browser.find_element(how, what)
         except NoSuchElementException:
             return False
         return True
+
+    def open(self):
+        self.browser.get(self.url)
