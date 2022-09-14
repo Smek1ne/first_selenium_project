@@ -31,7 +31,7 @@ class ProductPage(BasePage):
         product_name = self.browser.find_element(*L.PRODUCT_NAME)
         success_messages = self.browser.find_element(*L.MESSAGES)
 
-        assert product_name.text in success_messages.text, 'Invalid product name in success message'
+        assert product_name.text == success_messages.text, 'Invalid product name in success message'
 
     def cart_total_price_equals_product_price(self):
         product_price = self.browser.find_element(*L.PRODUCT_PRICE)
