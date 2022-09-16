@@ -29,7 +29,7 @@ class ProductPage(BasePage):
 
     def product_name_in_success_message_is_correct(self):
         product_name = self.browser.find_element(*L.PRODUCT_NAME)
-        success_messages = self.browser.find_element(*L.MESSAGES)
+        success_messages = self.browser.find_element(*L.SUCCESS_MESSAGES)
 
         assert product_name.text == success_messages.text, 'Invalid product name in success message'
 
@@ -38,3 +38,11 @@ class ProductPage(BasePage):
         total_price = self.browser.find_element(*L.TOTAL_PRICE)
 
         assert total_price.text == product_price.text, 'Total price is not equal to the product price'
+
+    def should_not_be_success_message(self):
+        assert self.element_is_not_presented(*L.SUCCESS_MESSAGES), \
+            "Success message is presented, but shouldn't be"
+
+    def success_message_should_disappear(self):
+        assert self.is_disappeared(*L.SUCCESS_MESSAGES), \
+            "Success message did not disappear"

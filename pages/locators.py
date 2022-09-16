@@ -16,6 +16,6 @@ class LoginPageLocators:
 class ProductPageLocators:
     PRODUCT_NAME = (By.CSS_SELECTOR, '.product_main>h1')
     PRODUCT_PRICE = (By.CSS_SELECTOR, '.product_main .price_color')
-    MESSAGES = (By.CSS_SELECTOR, '#messages .alertinner>strong')
+    SUCCESS_MESSAGES = (By.CSS_SELECTOR, '#messages .alertinner>strong')
     TOTAL_PRICE = (By.CSS_SELECTOR, '#messages .alertinner p strong')
     CART = (By.CSS_SELECTOR, '#add_to_basket_form > button')
