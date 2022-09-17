@@ -19,3 +19,8 @@ class ProductPageLocators:
     SUCCESS_MESSAGES = (By.CSS_SELECTOR, '#messages .alertinner>strong')
     TOTAL_PRICE = (By.CSS_SELECTOR, '#messages .alertinner p strong')
     CART = (By.CSS_SELECTOR, '#add_to_basket_form > button')
+
+
+class BasePageLocators:
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
