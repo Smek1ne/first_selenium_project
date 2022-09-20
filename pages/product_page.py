@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 class ProductPage(BasePage):
 
     def should_be_cart_link(self):
-        assert self.is_element_presented(*L.CART)
+        assert self.is_element_present(*L.CART)
 
     def cart_click(self):
         self.browser.find_element(*L.CART).click()
