@@ -1,5 +1,5 @@
 from .base_page import BasePage
-from .locators import ProductPageLocators as L
+from .locators import ProductPageLocators
 from selenium.common.exceptions import NoAlertPresentException  # в начале файла
 import math
 from selenium.webdriver.common.by import By
@@ -7,11 +7,11 @@ from selenium.webdriver.common.by import By
 
 class ProductPage(BasePage):
 
-    def should_be_cart_link(self):
-        assert self.is_element_present(*L.CART)
+    def should_be_basket_link(self):
+        assert self.is_element_present(*ProductPageLocators.CART)
 
-    def cart_click(self):
-        self.browser.find_element(*L.CART).click()
+    def click_add_to_basket_button(self):
+        self.browser.find_element(*ProductPageLocators.CART).click()
 
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
@@ -28,21 +28,21 @@ class ProductPage(BasePage):
             print("No second alert presented")
 
     def product_name_in_success_message_is_correct(self):
-        product_name = self.browser.find_element(*L.PRODUCT_NAME)
-        success_messages = self.browser.find_element(*L.SUCCESS_MESSAGES)
+        product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME)
+        success_messages = self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGES)
 
         assert product_name.text == success_messages.text, 'Invalid product name in success message'
 
     def cart_total_price_equals_product_price(self):
-        product_price = self.browser.find_element(*L.PRODUCT_PRICE)
-        total_price = self.browser.find_element(*L.TOTAL_PRICE)
+        product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE)
+        total_price = self.browser.find_element(*ProductPageLocators.TOTAL_PRICE)
 
         assert total_price.text == product_price.text, 'Total price is not equal to the product price'
 
     def should_not_be_success_message(self):
-        assert self.element_is_not_presented(*L.SUCCESS_MESSAGES), \
+        assert self.element_is_not_presented(*ProductPageLocators.SUCCESS_MESSAGES), \
             "Success message is presented, but shouldn't be"
 
     def success_message_should_disappear(self):
-        assert self.is_disappeared(*L.SUCCESS_MESSAGES), \
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGES), \
             "Success message did not disappear"

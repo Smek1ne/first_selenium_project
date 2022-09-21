@@ -6,16 +6,16 @@ class MainPageLocators:
 
 
 class LoginPageLocators:
-    EMAIL = (By.CSS_SELECTOR, '#id_login-username')
-    PASS = (By.CSS_SELECTOR, '#id_login-password')
+    LOGIN_EMAIL = (By.CSS_SELECTOR, '#id_login-username')
+    LOGIN_PASS = (By.CSS_SELECTOR, '#id_login-password')
     LOGIN_FORM = (By.CSS_SELECTOR, '#login_form')
-    REGISTER_FORM = (By.CSS_SELECTOR, '#register_form')
     LOGIN_BUTTON = (By.CSS_SELECTOR, '#login_link')
+    REGISTER_FORM = (By.CSS_SELECTOR, '#register_form')
     REGISTER_EMAIL = (By.CSS_SELECTOR, '#id_registration-email')
     REGISTER_PASS = (By.CSS_SELECTOR, '#id_registration-password1')
     REGISTER_PASS_REPEAT = (By.CSS_SELECTOR, '#id_registration-password2')
     REGISTER_BUTTON = (By.CSS_SELECTOR, '#register_form>button')
-
+ 
 
 class ProductPageLocators:
     PRODUCT_NAME = (By.CSS_SELECTOR, '.product_main>h1')
