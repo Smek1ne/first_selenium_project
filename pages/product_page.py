@@ -1,8 +1,7 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
-from selenium.common.exceptions import NoAlertPresentException  # в начале файла
+from selenium.common.exceptions import NoAlertPresentException
 import math
-from selenium.webdriver.common.by import By
 
 
 class ProductPage(BasePage):

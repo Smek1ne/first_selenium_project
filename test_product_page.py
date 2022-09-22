@@ -1,7 +1,7 @@
-from pages.product_page import ProductPage
 import pytest
-from pages.basket_page import BasketPage
-from pages.login_page import LoginPage
+from .pages.product_page import ProductPage
+from .pages.basket_page import BasketPage
+from .pages.login_page import LoginPage
 from faker import Faker
 
 # product_base_link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
